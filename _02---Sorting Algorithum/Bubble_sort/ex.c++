@@ -1,0 +1,1 @@
+// the constent value can not be count in memory beacuse its one time it will be neglect 
