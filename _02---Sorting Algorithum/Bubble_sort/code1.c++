@@ -49,3 +49,11 @@ int main()
     }
 
 }
+
+
+
+
+
+
+
+// Spcce Complecity ---> yadi code me koi 
