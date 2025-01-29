@@ -34,7 +34,8 @@ class top
 int main()
 {
     top p;
-    int a[] = {5,4,3,2,1};
+    // int a[] = {5,4,3,2,1};
+    int a[] = {1,2,3,4,5};
     int s = sizeof(a) / sizeof(a[0]);
     for(int i = 0 ; i < s ; i++)
     {
