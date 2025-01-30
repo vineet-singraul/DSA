@@ -25,6 +25,7 @@ class Top
 int main()
 {
     // int a[5] = {2,3,4,5,6};
+    int a[5] = {1,2,3,4,5};
     int a[5];
     int s = sizeof(a) / sizeof(a[0]);
     Top p;
