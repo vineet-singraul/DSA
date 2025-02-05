@@ -6,20 +6,20 @@ class top
 public:
   void SelectionSort(int arr[] , int s)
   {
-      for(int i=0 ; i<s ; i++)
+      for(int i=0 ; i<s ; ++i)
       {
-        int chotu = i;
-        for(int j=i+1 ; j<s ; j++)
+        int c = i;
+        for(int j=i+1 ; j<s ; ++j)
         {
-            chotu = j;
+            c = j;
         }
-        if(chotu != i)
+        if(c != i)
         {
-            int temp;   
+            int temp;
             temp = arr[i];
-            arr[i] = arr[chotu];
-            arr[chotu] = temp;
-        }    
+            arr[i] = arr[c];
+            arr[c] = temp;
+        }
       }
   }
 
