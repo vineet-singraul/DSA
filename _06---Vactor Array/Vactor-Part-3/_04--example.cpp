@@ -1,15 +1,13 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
-
 int main() {
     vector<int> v1 = {1, 2, 3};
     vector<int> v2 = {3, 4};
     int val1 = 0;
     int val2 = 0;
     int m;
-
+    
     int maxS = max(v1.size(), v2.size());
 
     for (int i = 0; i < maxS; i++) {
