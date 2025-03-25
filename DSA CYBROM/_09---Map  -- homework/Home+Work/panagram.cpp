@@ -1,14 +1,12 @@
 #include<iostream>
 #include<unordered_set>
 using namespace std;
-
 class Panagram
 {
     public:
     bool Checkpanagram(string ch)
     {
         unordered_set<char> latters;
-
         for(auto c : ch)
         {
             if(c >= 'a' && c <='z')
@@ -16,7 +14,7 @@ class Panagram
                 latters.insert(c);
             }
         }
-        return latters.size() == 26;
+        return latters.size() == 26; 
     }
 };
 
