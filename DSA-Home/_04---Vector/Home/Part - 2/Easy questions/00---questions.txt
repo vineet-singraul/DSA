@@ -1,0 +1,229 @@
+Here are **40 questions** on `std::vector` in C++ categorized by difficulty level, along with **input and expected output** for each.
+
+---
+
+## **Easy (10 Questions)**
+### **1. Basic Vector Declaration**
+**Question:** Declare a vector of integers and print its elements.  
+**Input:** `{1, 2, 3, 4, 5}`  
+**Output:** `1 2 3 4 5`  
+
+---
+
+### **2. Adding Elements using push_back()**
+**Question:** Add elements to an empty vector using `push_back()` and print the vector.  
+**Input:** `push_back(10), push_back(20), push_back(30)`  
+**Output:** `10 20 30`  
+
+---
+
+### **3. Accessing Elements using Indexing**
+**Question:** Access and print the 3rd element of the vector.  
+**Input:** `{5, 15, 25, 35, 45}`  
+**Output:** `25`  
+
+---
+
+### **4. Removing Elements using pop_back()**
+**Question:** Remove the last element from the vector and print the updated vector.  
+**Input:** `{10, 20, 30, 40, 50} -> pop_back()`  
+**Output:** `10 20 30 40`  
+
+---
+
+### **5. Finding Vector Size**
+**Question:** Print the size of a vector.  
+**Input:** `{1, 2, 3, 4}`  
+**Output:** `4`  
+
+---
+
+### **6. Checking if a Vector is Empty**
+**Question:** Check if a vector is empty.  
+**Input:** `{}`  
+**Output:** `Empty`  
+
+---
+
+### **7. Using front() and back()**
+**Question:** Print the first and last elements of the vector.  
+**Input:** `{100, 200, 300, 400}`  
+**Output:** `Front: 100, Back: 400`  
+
+---
+
+### **8. Using at() for Element Access**
+**Question:** Print the element at index 2 using `at()`.  
+**Input:** `{11, 22, 33, 44}`  
+**Output:** `33`  
+
+---
+
+### **9. Using clear() to Remove All Elements**
+**Question:** Clear the vector and print its size.  
+**Input:** `{1, 2, 3, 4} -> clear()`  
+**Output:** `0`  
+
+---
+
+### **10. Iterating Using a Range-Based Loop**
+**Question:** Print all elements of a vector using a range-based loop.  
+**Input:** `{7, 14, 21}`  
+**Output:** `7 14 21`  
+
+---
+
+## **Medium (20 Questions)**
+### **11. Iterating Using an Iterator**
+**Question:** Use an iterator to print all elements.  
+**Input:** `{5, 10, 15}`  
+**Output:** `5 10 15`  
+
+---
+
+### **12. Reversing a Vector**
+**Question:** Reverse a vector and print it.  
+**Input:** `{1, 2, 3, 4}`  
+**Output:** `4 3 2 1`  
+
+---
+
+### **13. Sorting a Vector in Ascending Order**
+**Question:** Sort the given vector.  
+**Input:** `{50, 10, 30, 20, 40}`  
+**Output:** `10 20 30 40 50`  
+
+---
+
+### **14. Sorting a Vector in Descending Order**
+**Question:** Sort the vector in descending order.  
+**Input:** `{5, 3, 8, 1}`  
+**Output:** `8 5 3 1`  
+
+---
+
+### **15. Finding Maximum Element**
+**Question:** Find the maximum element in a vector.  
+**Input:** `{12, 45, 32, 67, 23}`  
+**Output:** `67`  
+
+---
+
+### **16. Finding Minimum Element**
+**Question:** Find the minimum element in a vector.  
+**Input:** `{10, 5, 30, 2, 50}`  
+**Output:** `2`  
+
+---
+
+### **17. Counting Occurrences of an Element**
+**Question:** Count how many times 3 appears in the vector.  
+**Input:** `{3, 1, 3, 5, 3, 7}`  
+**Output:** `3`  
+
+---
+
+### **18. Removing a Specific Element**
+**Question:** Remove all occurrences of 5 from the vector.  
+**Input:** `{1, 5, 2, 5, 3}`  
+**Output:** `1 2 3`  
+
+---
+
+### **19. Using erase() to Remove an Element by Index**
+**Question:** Remove the element at index 2.  
+**Input:** `{10, 20, 30, 40, 50}`  
+**Output:** `10 20 40 50`  
+
+---
+
+### **20. Using insert() to Add an Element at a Specific Index**
+**Question:** Insert 99 at index 2.  
+**Input:** `{10, 20, 30, 40}`  
+**Output:** `10 20 99 30 40`  
+
+---
+
+### **21. Using emplace_back()**
+**Question:** Add elements using `emplace_back()`.  
+**Input:** `emplace_back(100), emplace_back(200)`  
+**Output:** `100 200`  
+
+---
+
+### **22. Merging Two Vectors**
+**Question:** Merge two vectors and print the result.  
+**Input:** `{1, 2, 3}` and `{4, 5, 6}`  
+**Output:** `1 2 3 4 5 6`  
+
+---
+
+### **23. Swapping Two Vectors**
+**Question:** Swap the contents of two vectors.  
+**Input:** `v1 = {1, 2, 3}`, `v2 = {4, 5, 6}`  
+**Output:** `v1 = 4 5 6`, `v2 = 1 2 3`  
+
+---
+
+### **24. Resizing a Vector**
+**Question:** Resize a vector to 7 elements (default 0).  
+**Input:** `{1, 2, 3}`  
+**Output:** `1 2 3 0 0 0 0`  
+
+---
+
+### **25. Using unique() to Remove Duplicates**
+**Question:** Remove consecutive duplicates from a sorted vector.  
+**Input:** `{1, 1, 2, 2, 3, 3}`  
+**Output:** `1 2 3`  
+
+---
+
+### **26. Copying a Vector**
+**Question:** Copy elements of one vector into another.  
+**Input:** `{10, 20, 30}`  
+**Output:** `Copied Vector: 10 20 30`  
+
+---
+
+### **27. Checking If an Element Exists**
+**Question:** Check if 20 exists in the vector.  
+**Input:** `{5, 10, 15, 20, 25}`  
+**Output:** `Exists`  
+
+---
+
+### **28. Using find() to Locate an Element**
+**Question:** Find the index of element 30.  
+**Input:** `{10, 20, 30, 40}`  
+**Output:** `Index: 2`  
+
+---
+
+### **29. Creating a Vector of Pairs**
+**Question:** Create a vector of `{int, string}` pairs and print.  
+**Input:** `{(1, "A"), (2, "B")}`  
+**Output:** `1 A, 2 B`  
+
+---
+
+### **30. Vector of Vectors**
+**Question:** Create and print a 2D vector.  
+**Input:** `{{1, 2}, {3, 4}}`  
+**Output:** `1 2` `3 4`  
+
+---
+
+## **Hard (10 Questions)**
+### **31. Rotate Vector Left**
+### **32. Rotate Vector Right**
+### **33. Find Second Largest Element**
+### **34. Find Kth Smallest Element**
+### **35. Check if a Vector is Sorted**
+### **36. Implement a Min Heap using Vector**
+### **37. Implement a Max Heap using Vector**
+### **38. Implement Custom Sorting Using Comparator**
+### **39. Find Intersection of Two Vectors**
+### **40. Find Union of Two Vectors**  
+
+Let me know if you need solutions! 🚀
