@@ -31,7 +31,5 @@ int main()
    node *root = new node(10); 
    root->l = new node(20);
    root->r = new node(30);
-
+   root->preorder(root); 
 }
-
-// preorder or post ka banao 
