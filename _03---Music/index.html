@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music app</title>
+    <link rel="icon" class="Log_web_page"
+        href="https://tse1.mm.bing.net/th?id=OIP.AysIcLkFOhkbZ9yMPzQDRQHaFj&pid=Api&P=0&h=180"
+        type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="ab.css"> -->
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <!-- {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} -->
+
+</head>
+
+<body>
+
+    <!-- {{{{{{{{{{{{{{{{{{{{{{{{}{{}{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} -->
+    <!-- Dynaically open login page  -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Sign Up</h2>
+            <form id="authForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" id="submitBtn">Sign Up</button>
+            </form>
+            <p id="switchAuth">Already have an account? <a href="#" id="switchAuthLink">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER CLASS -->
+    <div class="container flex bg-bleck">
+        <!-- LEFT SIDE VALA BOX -->
+        <div class="left bg-bleck">
+
+            <div class="close" id="close">
+                <i class="fa-solid fa-x"></i>
+            </div>
+
+            <div class="home bg-gray raunded m-1 p-1">
+                <div class="logo_ka_baap"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgQNiOdkwOiB2Yyn9jnN7pVBffobBnx-tyg&s"
+                        alt="" class="logo">
+                </div>
+                <ul>
+                    <li><i class="fa-solid fa-house"></i>Home</li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i>Search</li>
+                </ul>
+            </div>
+
+
+            <!-- Library ke liye -->
+            <div class="library bg-gray raunded m-1 p-1">
+                <div class="headding">
+                    <i class="fa-solid fa-copy"></i>
+                    <h2>Your Playlist</h2>
+                </div>
+
+
+
+                <!-- Brightness Slider Control -->
+                <div class="brightness-controls">
+                    <label for="brightness-slider">
+                        <i class="fa-solid fa-sun"></i>
+                    </label>
+                    <input type="range" id="brightness-slider" min="0.5" max="2" step="0.1"
+                        value="1" aria-label="Adjust Brightness">
+                    <label for="brightness-slider">
+                        <i class="fa-solid fa-moon"></i>
+                    </label>
+                </div>
+
+
+
+
+                <!-- songs current information -->
+                <div class="player">
+                    <audio id="audioPlayer" src=""></audio>
+                    <div class="songinfo">
+                        <div class="singer-info"></div>
+                        <img id="singerImage" src="" alt="Singer Image">
+                        <p id="singerName"></p>
+                        <div class="for_back">
+                            <button id="backwardButton">-10s</button>
+                            <button id="forwardButton">+10s</button>
+                        </div>
+                        <div class="title-info"></div>
+                        <div class="description-info"></div>
+                        <div class="time-info">
+                            <div class="current-time"></div>
+                            <div class="time-bar"></div>
+                        </div>
+                    </div>
+                    <div class="songbutton">
+                        <i class="fa-solid fa-backward-step" onclick="backwardSong()"></i>
+                        <i class="fa-solid fa-play" onclick="togglePlayPause()"></i>
+                        <i class="fa-solid fa-forward-step" onclick="forwardSong()"></i>
+                    </div>
+                    <div class="songtime"></div>
+                </div>
+
+                <div class="songlist" id="songList">
+                    <!-- Song cards will be added here dynamically -->
+                </div>
+                <!-- Footer Ke Liye -->
+                <div class="footer">
+                    <div><a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>Privacy
+                                Policy</span></a></div>
+                    <div><a
+                            href="https://www.spotify.com/in-en/legal/cookies-policy/"><span>Cookies</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About
+                                Ads</span></a></div>
+                    <div><a
+                            href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE VALA BOX -->
+        <div class="right bg-gray raundedm">
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburgerCont">
+                        <!-- for search box -->
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Search for music...">
+                            <button id="searchButton">
+                                <i class="fa-solid fa-search"></i>
+                            </button>
+                        </div>
+                        <!-- for login and signup -->
+                        <div class="buttons">
+                            <button class="singupbtn">Sing up</button>
+                            <button class="loginbtn">Login</button>
+                        </div>
+
+                        <!--Manu Buttons -->
+                        <i class="fa-solid fa-bars" id="hamburger"></i>
+                        <i class="fa-solid fa-chevron-left bada"></i>
+                        <i class="fa-solid fa-angle-right chota"></i>
+
+
+                        <!-- Dark Mode Toggle Button -->
+                        <button id="theme-toggle" class="theme-icon">
+                            <i id="theme-icon" class="fas fa-sun"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Playlist of singer -->
+            <div class="spotify-playlist">
+                <h1>Spotify Playlist</h1>
+                <div class="cardContainer" id="spotifyCardContainer">
+                    <!-- Spotify cards will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} -->
+
+
+
+
+        <!-- Music ka server    -->
+        <script>
+            let songs = [
+                {
+                    image: "https://tse3.mm.bing.net/th?id=OIP.-XyBZ2KDEc1m6NR20fe4hgHaFj&pid=Api&P=0&h=180",
+                    singer: "Arijit Singh",
+                    title: "Kaise huaa ",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Tumse Kiran Dhoop Ki-(PagalWorld.Ink).mp3"
+                },
+                {
+                    image: "https://tse3.mm.bing.net/th?id=OIP.7S5Ls29TKwmHRGRr8B2h5QHaEK&pid=Api&P=0&h=180",
+                    singer: "Arijit Singh",
+                    title: "Kaise huaa ",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/O-Sajni-Re-(Laapataa-Ladies)(PagalNew.Com.Se).mp3"
+                },
+
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1SydM1A37Y--RY6MxG33mM2glBO2XcoFptg&s",
+                    singer: "Danish",
+                    title: "O-Maahi---Mohd",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/O-Maahi---Mohd-Danish(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYAKLEdgu9QtL-0jsxv07PuZccbSCyamLI9g&s",
+                    singer: "Rahat Fateh Ali Khan",
+                    title: "Piya-O-Re-Piya",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Piya-O-Re-Piya(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThzcDUIttIE43IULLnTE5YHPRLdmUydFhs2g&s",
+                    singer: " Shreya Ghoshal",
+                    title: "Tere-Hawaale",
+                    description: "Romantic Hindi song featuring vibrant melodies .",
+                    audio: "music/Tere-Hawaale(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpmHKyDXuhe3o3zvvk8b_fDldJWfFSUQW59g&s",
+                    singer: "Arijit singh",
+                    title: "Oonchi Oonchi Deewarein",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Oonchi Oonchi Deewarein(PagalWorld.com.sb).mp3"
+                },
+
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-pg6DvFiJpMBHerVuCi9c36dtVdA7KPCffg&s",
+                    singer: "Arijit Singh",
+                    title: "Pehli Dafa",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Pehli Dafa(PagalWorld.com.sb).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBh3OMP1RefcdFXPeSzu6Om6RtV5bJRfLKiQ&s",
+                    singer: "The Arijit singh",
+                    title: "Kesariya",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Kesariya(PagalWorld.com.sb).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2On4GG2zHvYnT0HJNb11wst4I5mpy_BGYw&s",
+                    singer: "Arijit singh",
+                    title: "Kudmayi-X-Apna-Bana-Le",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Kudmayi-X-Apna-Bana-Le(PagalWorld).mp3"
+                }
+                ,
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1SydM1A37Y--RY6MxG33mM2glBO2XcoFptg&s",
+                    singer: "Danish(PaglaSongs)",
+                    title: "O-Maahi---Mohd",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/O-Maahi---Mohd-Danish(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm2QlEwEejkffn0bW4vHrgRLiE7nwmf7GMBA&s",
+                    singer: "olduğunu düşünüyorsan",
+                    title: "Heeriye",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/m-1/_Heeriye(PagalWorld.com.sb).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkn1tGGRTIOQjDapIRmDdNWnjEujGb55f_tw&s",
+                    singer: " Anu Malik",
+                    title: "Pal Pal Dil Ke Pas",
+                    description: "Romantic Hindi song featuring vibrant melodies .",
+                    audio: "music/m-1/128-Pal Pal Dil Ke Pas - Blackmail 1973 128 Kbps.mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRobq5krCrHEFxO6x2tA9xgjSWPB7gSSQIoLA&s",
+                    singer: "Arijit singh",
+                    title: "Ae Dil Hai Mushkil",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/m-1/Ae Dil Hai Mushkil Title Track(PagalWorld.com.sb) (3).mp3"
+                },
+
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwhohlWhw8ayeUPdBfxLSLLzCgTYa5dLi_rg&s",
+                    singer: "Arijit Singh",
+                    title: "Humdard",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/m-1/Humdard - Ek Villain 320 Kbps.mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTB2OhHUkyEgGaAFmzDAJcq9rK7UoHaDPKkw&s",
+                    singer: "Arijit singh",
+                    title: "Main-Hoon-Saath-Tere-",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/m-1/Main-Hoon-Saath-Tere-(Slowed-And-Reverb)(PagalWorlld.Com).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2On4GG2zHvYnT0HJNb11wst4I5mpy_BGYw&s",
+                    singer: "Arijit singh",
+                    title: "Kudmayi-X-Apna-Bana-Le",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Kudmayi-X-Apna-Bana-Le(PagalWorld).mp3"
+                }
+                ,
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1SydM1A37Y--RY6MxG33mM2glBO2XcoFptg&s",
+                    singer: "Danish",
+                    title: "O-Maahi---Mohd",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/O-Maahi---Mohd-Danish(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYAKLEdgu9QtL-0jsxv07PuZccbSCyamLI9g&s",
+                    singer: "Rahat Fateh Ali",
+                    title: "Piya-O-Re-Piya",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Piya-O-Re-Piya(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXMa43b3JBceBrRzbUwiIn7KTWJ0Rfhzo1Sw&s",
+                    singer: "Arijit Singh",
+                    title: "Kaise huaa ",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Kaise-Hua(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1SydM1A37Y--RY6MxG33mM2glBO2XcoFptg&s",
+                    singer: "Danish",
+                    title: "O-Maahi---Mohd",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/O-Maahi---Mohd-Danish(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThzcDUIttIE43IULLnTE5YHPRLdmUydFhs2g&s",
+                    singer: "Shreya Ghoshal",
+                    title: "Tere-Hawaale",
+                    description: "Romantic Hindi song featuring vibrant melodies .",
+                    audio: "music/Tere-Hawaale(PaglaSongs).mp3"
+                },
+                {
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpmHKyDXuhe3o3zvvk8b_fDldJWfFSUQW59g&s",
+                    singer: "Arijit singh",
+                    title: "Oonchi Oonchi Deewarein",
+                    description: "Romantic Hindi song featuring vibrant melodies ",
+                    audio: "music/Oonchi Oonchi Deewarein(PagalWorld.com.sb).mp3"
+                }
+            ];
+        </script>
+
+       <script src="script.js"></script>
+
+</body>
+
+</html>
