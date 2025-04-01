@@ -2,6 +2,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 #include <iostream>
 using namespace std;
 
@@ -54,6 +64,7 @@ int main()
     node *root = NULL;
     root = cerate(root);
 
+    cout << "\n Pre Order : \n";
     cout << "\n Pre Order : \n";
     Preorder(root);
 }
