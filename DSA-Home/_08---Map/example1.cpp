@@ -28,7 +28,13 @@ int main()
     mp[roll] = name;
   }
 
-     for(auto f : mp)
+
+
+
+
+
+
+       for(auto f : mp)
      { 
         cout<<"Name is : "<<f.first<<" : "<<" roll number is :"<<f.second<<endl; 
      }
