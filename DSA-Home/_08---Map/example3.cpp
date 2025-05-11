@@ -8,6 +8,9 @@
 // 1) Alice    2) Bob   3) Charlie   4) David    5) Eve
 // Output:  Charlie
 
+// Input:  5
+// 1) Alice    2) Bob   3) Charlie   4) David    5) Eve
+// Output:  Charlie
 
 #include <iostream>
 #include <map>
