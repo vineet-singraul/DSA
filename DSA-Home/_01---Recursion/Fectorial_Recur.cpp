@@ -14,8 +14,9 @@ int FectorialFind(int number)
 int main()
 {
     int number;
-    cout<<"Enter Number for Fectorial Find : ";
+    cout<<"Enter Number for Fectorial Find = ";
     cin>>number;
     int res = FectorialFind(number);
+    cout<<res;
     cout<<res;
 }
