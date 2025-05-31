@@ -18,6 +18,7 @@ int main()
        cin>>roll;
        mp[roll] = name;
     }
+    
     cout<<"Display All The Data : "<<endl;
     for(auto f : mp)
     {
