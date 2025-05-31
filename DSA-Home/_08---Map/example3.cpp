@@ -14,7 +14,6 @@ int main()
   map<int, string> mp;
   cout << "Enter Size Of MAp : ";
   cin >> n;
-
   for (int i = 0; i < n; ++i)
   {
     cout << "Enter Name : " << i + 1 << " = ";
@@ -23,7 +22,6 @@ int main()
     cin >> roll;
     mp[roll] = name;
   }
-
   for (auto f : mp)
   {
     cout << "Name is : " << f.first << " : " << " roll number is :" << f.second << endl;
