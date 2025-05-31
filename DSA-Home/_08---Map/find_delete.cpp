@@ -10,7 +10,6 @@ int main()
 
     cout<<"Enter Size od Map : ";
     cin>>n;
-
     for(int i=0 ; i<n ; ++i)
     {
        cout<<"Enter Name : "<<i+1<<" : ";
@@ -19,13 +18,11 @@ int main()
        cin>>roll;
        mp[roll] = name;
     }
-
     cout<<"Display All The Data : "<<endl;
     for(auto f : mp)
     {
         cout<<f.first<<" : "<<f.second;
     }
-
     cout<<"Enter Value Want To Delete : ";
     cin>>del;
     auto f = mp.find(del);
