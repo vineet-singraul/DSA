@@ -29,7 +29,6 @@ int main()
     auto f = mp.find(del);
     mp.erase(f);
     cout<<endl;
- 
     cout<<"Display  All The Data After Deleted : "<<endl;
     for(auto f : mp)
     {
