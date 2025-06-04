@@ -25,7 +25,7 @@ int main()
         cout<<f.first<<" : "<<f.second;
     }
     cout<<"Enter Value Want To Delete : ";
-    
+
     cin>>del;
     auto f = mp.find(del);
     mp.erase(f);
@@ -34,5 +34,6 @@ int main()
     for(auto f : mp)
     {
         cout<<f.first<<" : "<<f.second;
+        
     }
 }
