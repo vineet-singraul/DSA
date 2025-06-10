@@ -20,7 +20,7 @@ int main()
     }
     
     cout<<"Display All The Data : "<<endl;
-    for(auto f : mp)
+    for(auto f : mp) 
     {
         cout<<f.first<<" : "<<f.second;
     }
