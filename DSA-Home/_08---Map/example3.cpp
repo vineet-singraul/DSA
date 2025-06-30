@@ -1,20 +1,6 @@
 // 1. Insert and Retrieve Values in a Map
 // Given a list of key-value pairs, insert them into a map<int, string> and retrieve a value for a given key.
 
-
-
-
-// Input:  5
-// 1) Alice    2) Bob   3) Charlie   4) David    5) Eve
-// Output:  Charlie
-
-// Input:  5
-// 1) Alice    2) Bob   3) Charlie   4) David    5) Eve
-// Output:  Charlie
-
-
-
-
 #include <iostream>
 #include <map>
 #include <algorithm>
